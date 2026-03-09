@@ -1,0 +1,101 @@
+.contact-section {
+  padding: 80px 0;
+  background: #f9fbff;
+  font-family: 'Poppins', sans-serif;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-header h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #0d6efd;
+}
+
+.section-header p {
+  color: #6c757d;
+}
+
+.contact-container {
+  display: flex;
+  gap: 40px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.contact-info {
+  flex: 1;
+}
+
+.info-box {
+  margin-bottom: 30px;
+}
+
+.info-box h6 {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.contact-form {
+  flex: 1.5;
+  background: #fff;
+  padding: 45px;
+  border-radius: 12px;
+  box-shadow: 0 8px 35px rgba(0, 0, 0, 0.06);
+}
+
+.row {
+  display: flex;
+  gap: 20px;
+}
+
+.col {
+  flex: 1;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #0d6efd;
+}
+
+button {
+  background: #0d6efd;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+button:hover {
+  background: #0b5ed7;
+}
+
+.error {
+  color: red;
+  font-size: 13px;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.success {
+  margin-top: 15px;
+  color: green;
+  font-weight: 500;
+}
