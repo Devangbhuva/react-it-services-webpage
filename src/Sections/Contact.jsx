@@ -3,6 +3,9 @@ import "./Contact.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import axios from "axios";
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -13,7 +16,7 @@ const Contact = () => {
     });
 
     const [errors, setErrors] = useState({});
-    const [success, setSuccess] = useState(false);
+    // const [success, setSuccess] = useState(false);
 
     const validate = () => {
         let newErrors = {};
@@ -39,11 +42,11 @@ const Contact = () => {
         return newErrors;
     };
     useEffect(() => {
-  AOS.init({
-    duration: 1000,
-    once: true
-  });
-}, []);
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    }, []);
 
     const handleChange = (e) => {
         setFormData({
@@ -52,23 +55,54 @@ const Contact = () => {
         });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
+
+        console.log("Form Data Before Validation:", formData);
 
         const validationErrors = validate();
         setErrors(validationErrors);
 
         if (Object.keys(validationErrors).length === 0) {
-            setSuccess(true);
-            setFormData({
-                name: "",
-                email: "",
-                subject: "",
-                message: ""
-            });
+            try {
+                console.log("Sending Data to API:", formData);
+
+                const response = await axios.post(
+                    "https://jsonplaceholder.typicode.com/posts",
+                    formData
+                );
+
+                console.log("API Response:", response.data);
+
+                // Axios ma response.ok nathi hotu
+                if (response.status === 201 || response.status === 200) {
+                    toast.success("Message sent successfully 🚀");
+
+                    setFormData({
+                        name: "",
+                        email: "",
+                        subject: "",
+                        message: ""
+                    });
+
+                    setErrors({});
+                }
+
+            } catch (error) {
+                console.error("Error:", error);
+
+                // Axios error handling
+                if (error.response) {
+                    toast.error(error.response.data.message || "API error ❌");
+                } else {
+                    toast.error("Server error ❌");
+                }
+            }
+        } else {
+            console.log("Validation Errors:", validationErrors);
+            toast.warning("Please fill all required fields ⚠️");
         }
     };
-
     return (
         <section className="contact-section">
             <div className="section-header">
@@ -145,11 +179,11 @@ const Contact = () => {
 
                         <button type="submit">Send Message</button>
 
-                        {success && (
+                        {/* {success && (
                             <div className="success">
                                 Thank You! Your message has been sent.
                             </div>
-                        )}
+                        )} */}
                     </form>
                 </div>
             </div>

@@ -27,18 +27,7 @@ const Navbar = () => {
       <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
         <div className="logo">techno<span>IT</span></div>
 
-        {/* DESKTOP MENU */}
-        {/* <ul className="nav-links desktop">
-          {["home","services","portfolio","team","news"].map(item => (
-            <li
-              key={item}
-              className={active === item ? "active" : ""}
-              onClick={() => handleClick(item)}
-            >
-              {item.toUpperCase()}
-            </li>
-          ))}
-        </ul> */}
+
 
         {/* DESKTOP MENU */}
         <ul className="nav-links desktop">

@@ -16,10 +16,6 @@ function App() {
     <>
       <Header />
 
-      {/* <div id="home" className="section">home Section</div> */}
-      {/* <div id="services" className="section">Services Section</div>
-      <div id="about" className="section">About Section</div>
-      <div id="contact" className="section">Contact Section</div> */}
       <Services/>
       <WhyChoose/>  
       <Portfolio/>

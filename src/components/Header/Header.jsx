@@ -23,10 +23,12 @@ const Header = () => {
           customizable SEO friendly template.</p>
         {/* SOCIAL ICONS */}
         <div className="social-icons">
-          <FaFacebookF />
-          <FaTwitter />
-          <FaLinkedinIn />
-          <FaInstagram />
+          <a href="#"><FaFacebookF /></a>
+          <a href="#"><FaTwitter /></a>
+          <a href="https://www.linkedin.com/in/devang-bhuva01/" target="_blank" rel="noopener noreferrer">
+            <FaLinkedinIn />
+          </a>
+          <a href="#"><FaInstagram /></a>
         </div>
 
         {/* BUTTONS */}

@@ -7,12 +7,6 @@ import {
   FiCloud, 
   FiShield 
 } from "react-icons/fi";
-// import serviceDesign from "../../assets/images/icons/service-design.svg";
-// import serviceHosting from "../../assets/images/icons/service-hosting.svg";
-// import serviceSocial from "../../assets/images/icons/service-social.svg";
-// import serviceSeo from "../../assets/images/icons/service-seo.svg";
-// import serviceCloud from "../../assets/images/icons/service-cloud.svg";
-// import serviceSecure from "../../assets/images/icons/service-secure.svg";
 
 const Services = () => {
   return (
