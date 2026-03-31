@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import "./Navbar.css";
+import { Navigate, useNavigate } from "react-router-dom";
 
-const Navbar = () => {
+// const Navbar = () => {
+const Navbar = ({ setPage, page }) => {
   const [active, setActive] = useState("home");
   const [mobileOpen, setMobileOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -16,22 +18,27 @@ const Navbar = () => {
 
   const handleClick = (id) => {
     setActive(id);
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    setPage(id);
+    // document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     setMobileOpen(false);
     setMenuOpen(false);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+
   };
+  const navigate = useNavigate();
+
 
   return (
     <>
       {/* NAVBAR */}
-      <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
+      <nav className={`navbar ${(scrolled || page !== "home") ? "scrolled" : ""}`}>
         <div className="logo">techno<span>IT</span></div>
 
 
 
         {/* DESKTOP MENU */}
         <ul className="nav-links desktop">
-          {["home", "services", "portfolio", "team"].map(item => (
+          {["home", "services", "portfolio", "team", "pricing", "contact"].map(item => (
             <li
               key={item}
               className={active === item ? "active" : ""}
@@ -40,6 +47,8 @@ const Navbar = () => {
               {item.toUpperCase()}
             </li>
           ))}
+
+
 
           {/* DESKTOP DROPDOWN MENU */}
           <li
@@ -53,7 +62,7 @@ const Navbar = () => {
               onClick={(e) => e.stopPropagation()}
             >
               <li onClick={() => handleClick("about")}>About</li>
-              <li onClick={() => handleClick("pricing")}>Pricing</li>
+              <li onClick={() => handleClick("pricing-page")}>Pricing</li>
               <li onClick={() => handleClick("faqs")}>FAQs</li>
               <li onClick={() => handleClick("terms")}>Terms & Conditions</li>
               <li onClick={() => handleClick("privacy")}>Privacy Policy</li>
@@ -61,15 +70,16 @@ const Navbar = () => {
 
           </li>
 
-          <li
-            className={active === "news" ? "active" : ""}
-            onClick={() => handleClick("news")}
-          >
-            NEWS
+          <li className={active === "news" ? "active" : ""}
+            onClick={() => handleClick("news")} > NEWS
           </li>
         </ul>
 
         <button className="quote-btn">Get Quotes</button>
+        {/* NEW LOGIN BUTTON */}
+        <button className="login-btn" onClick={() => navigate("/login")}>
+          Login
+        </button>
 
         {/* HAMBURGER */}
         <div className="hamburger" onClick={() => setMobileOpen(true)}>

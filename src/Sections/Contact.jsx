@@ -46,6 +46,7 @@ const Contact = () => {
             duration: 1000,
             once: true
         });
+     
     }, []);
 
     const handleChange = (e) => {
@@ -74,8 +75,9 @@ const Contact = () => {
 
                 console.log("API Response:", response.data);
 
-                // Axios ma response.ok nathi hotu
+
                 if (response.status === 201 || response.status === 200) {
+
                     toast.success("Message sent successfully 🚀");
 
                     setFormData({
@@ -86,6 +88,7 @@ const Contact = () => {
                     });
 
                     setErrors({});
+                    localStorage.removeItem("contactData");
                 }
 
             } catch (error) {

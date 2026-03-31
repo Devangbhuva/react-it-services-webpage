@@ -3,15 +3,18 @@ import Navbar from "../Navbar/Navbar";
 import "./Header.css";
 import heroImg from "../../assets/images/hero-bg.png";
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+    const navigate = useNavigate();
+  
   return (
     <header
       id="home"
       className="hero"
       style={{ backgroundImage: `url(${heroImg})` }}
     >
-      <Navbar />
+      {/* <Navbar setPage={setPage} />   */}
 
       <div className="hero-content">
         <h1>
@@ -35,6 +38,8 @@ const Header = () => {
         <div className="hero-buttons">
           <button className="primary">Get Quotes</button>
           <button className="secondary">Get Started</button>
+          
+          
         </div>
       </div>
     </header>

@@ -1,0 +1,35 @@
+.terms-section {
+  padding: 120px 20px 60px;
+  background: #f8f9fc;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.terms-section p {
+  font-size: 20px;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.terms-section h3 {
+  font-size: 25px;
+  margin: 25px 0 15px;
+  color: #0a274f;
+}
+
+.terms-section ul {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.terms-section ul li {
+  margin-bottom: 10px;
+  line-height: 1.4;
+  color: #444;
+  font-size: 20px;
+}

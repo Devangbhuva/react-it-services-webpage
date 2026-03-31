@@ -31,7 +31,7 @@ const Blogs = () => {
   ];
 
   return (
-    <section className="blog-section container">
+    <section id="news" className="blog-section container">
       <div className="section-header text-center">
         <h2>Blogs</h2>
         <p>Lorem ipsum dolor sit amet</p>

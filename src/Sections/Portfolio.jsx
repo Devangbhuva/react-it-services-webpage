@@ -27,7 +27,7 @@ const Portfolio = () => {
       : portfolioData.filter((item) => item.category === filter);
 
   return (
-    <section className="portfolio-section">
+ 
       <section id="portfolio" className="portfolio-section">
       <div className="container">
 
@@ -83,7 +83,6 @@ const Portfolio = () => {
 
       </div>
       </section>
-    </section>
   );
 };
 

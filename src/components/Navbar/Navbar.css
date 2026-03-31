@@ -8,7 +8,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  padding: 18px 40px;
+  padding: 10px 40px;
   display: flex;
   align-items: center;
   z-index: 100;
@@ -19,7 +19,6 @@
 .navbar.scrolled {
   background: #061432;
 }
-
 .logo {
   color: #fff;
   font-size: 26px;
@@ -87,7 +86,21 @@
   background: rgba(255,255,255,0.08);
   color: white;
 }
+.login-btn {
+  background: #0d6efd;
+  color: white;
+  border: none;
+  padding: 12px 26px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-left: 5px;
+}
 
+.login-btn:hover {
+  background: #0d6efd;
+  color: #fff;
+}
 /* SHOW ON HOVER */
 
 .desktop-dropdown.open .desktop-submenu {
